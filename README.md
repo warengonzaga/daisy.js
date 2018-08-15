@@ -1,4 +1,4 @@
-# DAISY.js [![Developed by Waren Gonzaga](https://img.shields.io/badge/Developed%20by-Waren%20Gonzaga-blue.svg?longCache=true&style=for-the-badge)](https://facebook.com/warengonzagaofficialpage)
+# DAISY.JS [![Developed by Waren Gonzaga](https://img.shields.io/badge/Developed%20by-Waren%20Gonzaga-blue.svg?longCache=true&style=for-the-badge)](https://facebook.com/warengonzagaofficialpage)
 
 [![GitHub Version](https://img.shields.io/github/release/WarenGonzaga/daisy.js.svg?style=for-the-badge)](https://github.com/WarenGonzaga/daisy.js/)
 [![GitHub](https://img.shields.io/github/license/WarenGonzaga/daisy.js.svg?style=for-the-badge)](https://github.com/WarenGonzaga/daisy.js)
