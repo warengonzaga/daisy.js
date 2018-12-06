@@ -1,6 +1,6 @@
 /*!
  * daisy.js - https://github.com/WarenGonzaga/daisy.js#readme
- * Version: 0.3.0
+ * Version: 0.1.0
  * Demo: https://warengonzaga.github.io/
  * Licensed under the MIT license - http://opensource.org/licenses/MIT
  * Copyright (c) 2018 Waren Gonzaga
