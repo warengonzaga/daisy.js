@@ -3,7 +3,11 @@
 [![GitHub Version](https://img.shields.io/github/release/WarenGonzaga/daisy.js.svg?style=for-the-badge)](https://github.com/WarenGonzaga/daisy.js/)
 [![GitHub](https://img.shields.io/github/license/WarenGonzaga/daisy.js.svg?style=for-the-badge)](https://github.com/WarenGonzaga/daisy.js)
 
-Brief Description to be follow...
+A JavaScript plugin for snazzy background particle systems. A maintained version and inspired by [Particleground](https://github.com/jnicol/particleground "Particleground").
+
+## Features
+
+This JavaScript plugin includes an optional parallax effect controlled by the mouse on desktop devices and gyroscope on mobile devices. Proven works with any browser that supports HTML5 canvas.
 
 ## Status
 
@@ -27,7 +31,8 @@ Daisy.js is Developed and Maintained by **Waren Gonzaga**
 
 - **Facebook:** https://facebook.com/warengonzagaofficialpage
 - **Twitter:** https://twitter.com/waren_gonzaga
-- **Email:** warengonzaga.dev@gmail.com
+- **Website:** https://warengonzaga.com
+- **Email:** dev@warengonzaga.com
 
 ---
 
