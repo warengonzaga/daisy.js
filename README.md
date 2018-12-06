@@ -11,7 +11,7 @@ This JavaScript plugin includes an optional parallax effect controlled by the mo
 
 ## Status
 
-This project is under development...
+This project is under development... will be available on January 22, 2019.
 
 ## Donate
 
