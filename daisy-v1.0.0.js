@@ -1,21 +1,25 @@
 /*!
- * daisy.js - https://github.com/WarenGonzaga/daisy.js#readme
- * Version: 0.1.0
- * Demo: https://warengonzaga.github.io/
+ * daisyjs - https://github.com/WarenGonzaga/daisy.js#readme
+ * Version: 1.0.0
+ * Demo: https://daisyjs.warengonzaga.com/
  * Licensed under the MIT license - http://opensource.org/licenses/MIT
- * Copyright (c) 2018 Waren Gonzaga
+ * Copyright (c) 2020 Waren Gonzaga
  * 
  * Facebook: @WarenGonzagaOfficialPage
  * Twitter: @Waren_Gonzaga
  * Github: @WarenGonzaga
+ * Website: warengonzaga.com
  * 
- * Maintained version of Particleground
+ * Maintained version of Particleground by jnicol
  * https://github.com/jnicol/particleground
+ * 
+ * Donote or Support!
+ * https://buymeacoff.ee/warengonzaga
  */
 
 ;(function(window, document) {
   "use strict";
-  var pluginName = 'particleground';
+  var pluginName = 'daisyjs';
 
   // http://youmightnotneedjquery.com/#deep_extend
   function extend(out) {
@@ -33,7 +37,7 @@
       }
     }
     return out;
-  };
+  }
 
   var $ = window.jQuery;
 
@@ -63,7 +67,7 @@
     function init() {
       if (!canvasSupport) { return; }
 
-      //Create canvas
+      // create canvas
       canvas = document.createElement('canvas');
       canvas.className = 'pg-canvas';
       canvas.style.display = 'block';
@@ -71,13 +75,13 @@
       ctx = canvas.getContext('2d');
       styleCanvas();
 
-      // Create particles
+      // create particles
       var numParticles = Math.round((canvas.width * canvas.height) / options.density);
       for (var i = 0; i < numParticles; i++) {
         var p = new Particle();
         p.setStackPos(i);
         particles.push(p);
-      };
+      }
 
       window.addEventListener('resize', function() {
         resizeHandler();
@@ -90,7 +94,7 @@
 
       if (orientationSupport && !desktop) {
         window.addEventListener('deviceorientation', function () {
-          // Contrain tilt range to [-30,30]
+          // contrain tilt range to [-30,30]
           tiltY = Math.min(Math.max(-event.beta, -30), 30);
           tiltX = Math.min(Math.max(-event.gamma, -30), 30);
         }, true);
@@ -120,19 +124,19 @@
       winW = window.innerWidth;
       winH = window.innerHeight;
 
-      // Wipe canvas
+      // wipe canvas
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Update particle positions
+      // update particle positions
       for (var i = 0; i < particles.length; i++) {
         particles[i].updatePosition();
-      };
-      // Draw particles
-      for (var i = 0; i < particles.length; i++) {
+      }
+      // draw particles
+      for (i = 0; i < particles.length; i++) {
         particles[i].draw();
-      };
+      }
 
-      // Call this function next time screen is redrawn
+      // call this function next time screen is redrawn
       if (!paused) {
         raf = requestAnimationFrame(draw);
       }
@@ -142,20 +146,20 @@
      * Add/remove particles.
      */
     function resizeHandler() {
-      // Resize the canvas
+      // resize the canvas
       styleCanvas();
 
       var elWidth = element.offsetWidth;
       var elHeight = element.offsetHeight;
 
-      // Remove particles that are outside the canvas
+      // remove particles that are outside the canvas
       for (var i = particles.length - 1; i >= 0; i--) {
         if (particles[i].position.x > elWidth || particles[i].position.y > elHeight) {
           particles.splice(i, 1);
         }
-      };
+      }
 
-      // Adjust particle density
+      // adjust particle density
       var numParticles = Math.round((canvas.width * canvas.height) / options.density);
       if (numParticles > particles.length) {
         while (numParticles > particles.length) {
@@ -166,10 +170,10 @@
         particles.splice(numParticles);
       }
 
-      // Re-index particles
+      // re-index particles
       for (i = particles.length - 1; i >= 0; i--) {
         particles[i].setStackPos(i);
-      };
+      }
     }
 
     /**
@@ -191,18 +195,18 @@
      * Particle
      */
     function Particle() {
-      this.stackPos;
+      this.stackPos = stackPos;
       this.active = true;
       this.layer = Math.ceil(Math.random() * 3);
       this.parallaxOffsetX = 0;
       this.parallaxOffsetY = 0;
-      // Initial particle position
+      // initial particle position
       this.position = {
         x: Math.ceil(Math.random() * canvas.width),
         y: Math.ceil(Math.random() * canvas.height)
-      }
-      // Random particle speed, within min and max values
-      this.speed = {}
+      };
+      // random particle speed, within min and max values
+      this.speed = {};
       switch (options.directionX) {
         case 'left':
           this.speed.x = +(-options.maxSpeedX + (Math.random() * options.maxSpeedX) - options.minSpeedX).toFixed(2);
@@ -233,24 +237,24 @@
      * Draw particle
      */
     Particle.prototype.draw = function() {
-      // Draw circle
+      // draw circle
       ctx.beginPath();
       ctx.arc(this.position.x + this.parallaxOffsetX, this.position.y + this.parallaxOffsetY, options.particleRadius / 2, 0, Math.PI * 2, true);
       ctx.closePath();
       ctx.fill();
 
-      // Draw lines
+      // draw lines
       ctx.beginPath();
-      // Iterate over all particles which are higher in the stack than this one
-      for (var i = particles.length - 1; i > this.stackPos; i--) {
+      // iterate over all particles which are higher in the stack than this one
+      for (var i = particles.length - 1; i > tpos; i--) {
         var p2 = particles[i];
 
-        // Pythagorus theorum to get distance between two points
-        var a = this.position.x - p2.position.x
-        var b = this.position.y - p2.position.y
+        // pythagorus theorum to get distance between two points
+        var a = this.position.x - p2.position.x;
+        var b = this.position.y - p2.position.y;
         var dist = Math.sqrt((a * a) + (b * b)).toFixed(2);
 
-        // If the two particles are in proximity, join them
+        // if the two particles are in proximity, join them
         if (dist < options.proximity) {
           ctx.moveTo(this.position.x + this.parallaxOffsetX, this.position.y + this.parallaxOffsetY);
           if (options.curvedLines) {
@@ -262,29 +266,29 @@
       }
       ctx.stroke();
       ctx.closePath();
-    }
+    };
 
     /**
-     * update particle position
+     * Update particle position
      */
     Particle.prototype.updatePosition = function() {
       if (options.parallax) {
         if (orientationSupport && !desktop) {
-          // Map tiltX range [-30,30] to range [0,winW]
-          var ratioX = (winW - 0) / (30 - -30);
-          pointerX = (tiltX - -30) * ratioX + 0;
-          // Map tiltY range [-30,30] to range [0,winH]
-          var ratioY = (winH - 0) / (30 - -30);
-          pointerY = (tiltY - -30) * ratioY + 0;
+          // map tiltX range [-30,30] to range [0,winW]
+          var ratioX = (winW - 0) / (30 - (-30));
+          pointerX = (tiltX - (-30)) * ratioX + 0;
+          // map tiltY range [-30,30] to range [0,winH]
+          var ratioY = (winH - 0) / (30 - (-30));
+          pointerY = (tiltY - (-30)) * ratioY + 0;
         } else {
           pointerX = mouseX;
           pointerY = mouseY;
         }
-        // Calculate parallax offsets
+        // calculate parallax offsets
         this.parallaxTargX = (pointerX - (winW / 2)) / (options.parallaxMultiplier * this.layer);
-        this.parallaxOffsetX += (this.parallaxTargX - this.parallaxOffsetX) / 10; // Easing equation
+        this.parallaxOffsetX += (this.parallaxTargX - this.parallaxOffsetX) / 10; // easing equation
         this.parallaxTargY = (pointerY - (winH / 2)) / (options.parallaxMultiplier * this.layer);
-        this.parallaxOffsetY += (this.parallaxTargY - this.parallaxOffsetY) / 10; // Easing equation
+        this.parallaxOffsetY += (this.parallaxTargY - this.parallaxOffsetY) / 10; // easing equation
       }
 
       var elWidth = element.offsetWidth;
@@ -302,7 +306,7 @@
           }
           break;
         default:
-          // If particle has reached edge of canvas, reverse its direction
+          // if particle has reached edge of canvas, reverse its direction
           if (this.position.x + this.speed.x + this.parallaxOffsetX > elWidth || this.position.x + this.speed.x + this.parallaxOffsetX < 0) {
             this.speed.x = -this.speed.x;
           }
@@ -321,24 +325,24 @@
           }
           break;
         default:
-          // If particle has reached edge of canvas, reverse its direction
+          // if particle has reached edge of canvas, reverse its direction
           if (this.position.y + this.speed.y + this.parallaxOffsetY > elHeight || this.position.y + this.speed.y + this.parallaxOffsetY < 0) {
             this.speed.y = -this.speed.y;
           }
           break;
       }
 
-      // Move particle
+      // move particle
       this.position.x += this.speed.x;
       this.position.y += this.speed.y;
-    }
+    };
 
     /**
      * Setter: particle stacking position
      */
     Particle.prototype.setStackPos = function(i) {
-      this.stackPos = i;
-    }
+      stackPos = i;
+    };
 
     function option (key, val) {
       if (val) {
@@ -384,15 +388,15 @@
     maxSpeedY: 0.7,
     directionX: 'center', // 'center', 'left' or 'right'. 'center' = dots bounce off edges
     directionY: 'center', // 'center', 'up' or 'down'. 'center' = dots bounce off edges
-    density: 10000, // How many particles will be generated: one particle every n pixels
+    density: 10000, // how many particles will be generated: one particle every n pixels
     dotColor: '#666666',
     lineColor: '#666666',
-    particleRadius: 7, // Dot size
+    particleRadius: 7, // dot size
     lineWidth: 1,
     curvedLines: false,
-    proximity: 100, // How close two dots need to be before they join
+    proximity: 100, // how close two dots need to be before they join
     parallax: true,
-    parallaxMultiplier: 5, // The lower the number, the more extreme the parallax effect
+    parallaxMultiplier: 5, // the lower the number, the more extreme the parallax effect
     onInit: function() {},
     onDestroy: function() {}
   };
@@ -437,8 +441,7 @@
     var vendors = ['ms', 'moz', 'webkit', 'o'];
     for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
       window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
-      window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
-                                 || window[vendors[x]+'CancelRequestAnimationFrame'];
+      window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] || window[vendors[x]+'CancelRequestAnimationFrame'];
     }
 
     if (!window.requestAnimationFrame)

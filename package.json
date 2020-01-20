@@ -1,5 +1,5 @@
 {
-  "name": "workspace",
+  "name": "daisyjs",
   "version": "1.0.0",
   "description": "A JavaScript plugin for snazzy background particle systems. A maintained version and inspired by Particleground.",
   "main": "gulpfile.js",
@@ -24,7 +24,17 @@
     "url": "https://github.com/WarenGonzaga/daisy.js/issues"
   },
   "homepage": "https://github.com/WarenGonzaga/daisy.js#readme",
+  "demo": "https://daisyjs.warengonzaga.com/",
   "devDependencies": {
-    "gulp": "^3.9.1"
-  }
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-header": "^2.0.9",
+    "gulp-jshint": "^2.1.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-uglify": "^3.0.2",
+    "jshint": "^2.11.0",
+    "jshint-stylish": "^2.2.1",
+    "readable-stream": "^3.5.0"
+  },
+  "dependencies": {}
 }
