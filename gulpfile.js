@@ -4,20 +4,21 @@
  **/
 
 // gulp packages
-const gulp    = require("gulp");
-const fs      = require("fs");
-const clean   = require("gulp-clean");
-const rename  = require("gulp-rename");
-const header  = require("gulp-header");
-const jshint  = require("gulp-jshint");
-const stylish = require("jshint-stylish");
-const uglify  = require("gulp-uglify");
-const pipeline = require("readable-stream").pipeline;
+const gulp      = require('gulp');
+const fs        = require('fs');
+const clean     = require('gulp-clean');
+const rename    = require('gulp-rename');
+const header    = require('gulp-header');
+const jshint    = require('gulp-jshint');
+const stylish   = require('jshint-stylish');
+const uglify    = require('gulp-uglify');
+const options   = require('gulp-options');
+const pipeline  = require('readable-stream').pipeline;
 
 // gulp paths
 const path = {
-  build: "./prod",
-  source: "./src"
+  build: './prod',
+  source: './src'
 };
 
 // copyright label
@@ -36,7 +37,7 @@ const copydata = {
     ' * Github: @WarenGonzaga',
     ' * Website: warengonzaga.com',
     ' * ',
-    ' * Maintained version of Particleground by jnicol',
+    ' * Maintained and LTS Version of Particleground by jnicol',
     ' * https://github.com/jnicol/particleground',
     ' * ',
     ' * Donote or Support!',
@@ -50,6 +51,7 @@ const copydata = {
  * Writen by Waren Gonzaga
  */
 
+// check scripts for production
 function devcheck() {
   return gulp
     .src([path.source+'/daisy.js'], {allowEmpty: true})
@@ -60,18 +62,20 @@ function devcheck() {
     .pipe(gulp.dest([path.build]));
 }
 
+// minify scripts for production
 function minifyjs() {
   return pipeline(
     gulp.src([path.build+'/daisy-v'+pkg.version+'.js']),
       uglify(),
       rename({
-        suffix: ".min",
-        extname: ".js"
+        suffix: '.min',
+        extname: '.js'
       }),
     gulp.dest([path.build])
-  )
+  );
 }
 
+// add copyright label
 function copyright() {
   return gulp
     .src([path.build+'/*.js'], {allowEmpty: true})
@@ -79,18 +83,57 @@ function copyright() {
     .pipe(gulp.dest([path.build]));
 }
 
-function copytoroot() {
+// copy dev build to root
+function copyDevJS() {
   return gulp
-    .src(path.build+'/*.js')
+    .src([path.build+'/daisy-v'+pkg.version+'.js'], {allowEmpty: true})
+    .pipe(rename({
+      basename: 'daisy',
+      extname: '.js'
+    }))
     .pipe(gulp.dest('./'));
 }
 
+//copy minified build to root
+function copyMinJS() {
+  return gulp
+    .src([path.build+'/daisy-v'+pkg.version+'.min.js'], {allowEmpty: true})
+    .pipe(rename({
+      basename: 'daisy.min',
+      extname: '.js'
+    }))
+    .pipe(gulp.dest('./'));
+}
+
+// cleaning options
+function cleanOptions() {
+  if(options.has('scripts')) {
+    return gulp
+      .src([path.build+'/*'], {allowEmpty: true})
+      .pipe(clean());
+  } else if (options.has('build')) {
+    return gulp
+      .src([path.build], {allowEmpty: true})
+      .pipe(clean());
+  } else if(options.has('daisy')) {
+    return gulp
+      .src('./daisy*.js', {allowEmpty: true})
+      .pipe(clean());
+  } else {
+    return gulp
+      .src([path.build], {allowEmpty: true})
+      .pipe(clean());
+  } 
+}
+
+// clean production folder
 function cleanprod() {
   return gulp
     .src('./prod', {allowEmpty: true})
     .pipe(clean());
 }
 
+// clean existing builds
 function cleanroot() {
   return gulp
     .src('./daisy*.js')
@@ -98,16 +141,18 @@ function cleanroot() {
 }
 
 // gulp series
-const build = gulp.series([devcheck, minifyjs, copyright, copytoroot]);
-const cleandev = gulp.series([cleanprod, cleanroot]);
+const build = gulp.series([devcheck, minifyjs, copyright, copyDevJS, copyMinJS]);
+const cleanAll = gulp.series([cleanprod, cleanroot]);
 
 // gulp commands
 exports.devcheck    = devcheck;
 exports.copyright   = copyright;
 exports.minifyjs    = minifyjs;
-exports.copytoroot  = copytoroot;
+exports.copydevjs   = copyDevJS;
+exports.copyminjs   = copyMinJS;
 exports.cleanprod   = cleanprod;
 exports.cleanroot   = cleanroot;
-exports.cleandev    = cleandev;
+exports.reset       = cleanAll;
+exports.clean       = cleanOptions;
 exports.build       = build;
 exports.default     = build;
