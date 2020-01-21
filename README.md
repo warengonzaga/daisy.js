@@ -27,7 +27,17 @@ Keep in mind that this is the maintained and long term support version of [Parti
 
 This JavaScript plugin includes an optional parallax effect controlled by the mouse on desktop devices and gyroscope on mobile devices. Proven works with any browser that supports HTML5 canvas.
 
+You can use it as jQuery plugin or use it as in your vanilla javascript project. Your choice!
+
+## Demo
+
+In Action: <https://daisyjs.warengonzaga.com>
+
+Demo files can be found in ``demo`` folder.
+
 ## Usage
+
+**_Vanilla JS_**
 
 ```js
 daisyjs(document.getElementById('your-element');
@@ -42,6 +52,8 @@ $('#your-element').daisyjs();
 ## Options
 
 Options can be set by passing an options object to the constructor. Check some example usage below.
+
+**_Vanilla JS_**
 
 ```js
 // Let's set the colors of particle dots and lines
@@ -65,6 +77,8 @@ For a full list of options please visit the [wiki](https://github.com/warengonza
 ## Methods
 
 DaisyJS has some basic public methods which can be used to interact with your daisy instance. See example below.
+
+**_Vanilla JS_**
 
 ```js
 var momoland = daisyjs(document.getElementById('your-element');
@@ -191,4 +205,4 @@ Daisy.js is Developed and Maintained by **Waren Gonzaga**
 
 ---
 
-**</>** with **<3** by **Waren Gonzaga**
+**</daisyjs.w>** with **<3** by **Waren Gonzaga**
