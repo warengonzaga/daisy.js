@@ -1,7 +1,7 @@
 {
   "name": "daisyjs",
   "version": "1.0.0",
-  "description": "A JavaScript plugin for snazzy background particle systems. A maintained version and inspired by Particleground.",
+  "description": "Web animation javascript plugin for beautiful background particle systems. The Maintained and LTS version of popular Particleground.",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

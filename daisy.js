@@ -1,3 +1,22 @@
+/*!
+ * daisyjs - https://github.com/WarenGonzaga/daisy.js#readme
+ * Version: 1.0.0
+ * Demo: https://daisyjs.warengonzaga.com/
+ * Licensed under the MIT license - http://opensource.org/licenses/MIT
+ * Copyright (c) 2020 Waren Gonzaga
+ * 
+ * Facebook: @WarenGonzagaOfficialPage
+ * Twitter: @Waren_Gonzaga
+ * Github: @WarenGonzaga
+ * Website: warengonzaga.com
+ * 
+ * Maintained and LTS Version of Particleground by jnicol
+ * https://github.com/jnicol/particleground
+ * 
+ * Donote or Support!
+ * https://buymeacoff.ee/warengonzaga
+ */
+
 ;(function(window, document) {
   "use strict";
   var pluginName = 'daisyjs';
