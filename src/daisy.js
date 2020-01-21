@@ -175,8 +175,9 @@
     /**
      * Particle
      */
+    
     function Particle() {
-      this.stackPos = stackPos;
+      this.stackPos = this.stackPos; 
       this.active = true;
       this.layer = Math.ceil(Math.random() * 3);
       this.parallaxOffsetX = 0;
@@ -227,7 +228,7 @@
       // draw lines
       ctx.beginPath();
       // iterate over all particles which are higher in the stack than this one
-      for (var i = particles.length - 1; i > tpos; i--) {
+      for (var i = particles.length - 1; i > this.stackPos; i--) {
         var p2 = particles[i];
 
         // pythagorus theorum to get distance between two points
@@ -322,7 +323,7 @@
      * Setter: particle stacking position
      */
     Particle.prototype.setStackPos = function(i) {
-      stackPos = i;
+      this.stackPos = i;
     };
 
     function option (key, val) {
