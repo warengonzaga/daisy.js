@@ -1,8 +1,10 @@
 # DAISY.JS [![Developed by Waren Gonzaga](https://img.shields.io/badge/Developed%20by-Waren%20Gonzaga-blue.svg?longCache=true&style=for-the-badge)](https://facebook.com/warengonzagaofficialpage)
 
 [![GitHub Version](https://img.shields.io/github/release/WarenGonzaga/daisy.js.svg?style=for-the-badge)](https://github.com/WarenGonzaga/daisy.js/)
+[![Github Star](https://img.shields.io/github/stars/WarenGonzaga/daisy.js.svg?style=for-the-badge)](https://github.com/WarenGonzaga/Passview)
+[![Github Fork](https://img.shields.io/github/forks/WarenGonzaga/daisy.js.svg?style=for-the-badge)](https://github.com/WarenGonzaga/Passview)
 [![License](https://img.shields.io/github/license/WarenGonzaga/daisy.js.svg?style=for-the-badge)](https://github.com/WarenGonzaga/daisy.js)
-[![Powered By](https://img.shields.io/badge/Powered%20By-GulpJS-orange.svg?style=for-the-badge)](https://paypal.me/warengonzagaofficial)
+[![Powered By](https://img.shields.io/badge/Powered%20By-GulpJS-orange.svg?style=for-the-badge)](https://gulpjs.com)
 
 Web animation javascript plugin for beautiful background particle systems.
 > The Maintained and LTS version of popular [Particleground](https://github.com/jnicol/particleground "Particleground").
@@ -11,7 +13,7 @@ Web animation javascript plugin for beautiful background particle systems.
 
 ![DaisyJS Official Icon](https://avataaars.io/?avatarStyle=Circle&topType=LongHairBigHair&accessoriesType=Blank&hairColor=BrownDark&facialHairType=Blank&clotheType=CollarSweater&clotheColor=Red&eyeType=Happy&eyebrowType=Default&mouthType=Smile&skinColor=Pale)
 
-## "Who is Daisy?"
+## Who is Daisy
 
 **_Yoo Jung Ahn_** or known as **Daisy of Momoland**. She is the inspiration in this open source project. She is a member of popular south korean KPOP girl group Momoland. My only reason why I name this project with her name is that to make this project very unique from other open source project out there.
 
@@ -33,7 +35,7 @@ You can use it as jQuery plugin or use it as in your vanilla javascript project.
 
 In Action: <https://daisyjs.warengonzaga.com>
 
-Demo files can be found in ``demo`` folder.
+Demo files can be found in **``"demo"``** folder.
 
 ## Usage
 
@@ -109,7 +111,7 @@ gulp
 
 ## Clean DaisyJS
 
-If you want to clean or delete the entire ``./prod`` folder just do the following.
+If you want to clean or delete the entire **``"./prod"``** folder just do the following.
 
 ```bash
 gulp clean
@@ -121,7 +123,7 @@ or
 gulp clean --build
 ```
 
-For cleaning the scripts only inside the ``./build`` folder do the following.
+For cleaning the scripts only inside the **``"./prod"``** folder do the following.
 
 ```bash
 gulp clean --scripts
@@ -199,10 +201,10 @@ Daisy.js is licensed under MIT - <https://opensource.org/licenses/MIT>
 Daisy.js is Developed and Maintained by **Waren Gonzaga**
 
 * **Facebook:** <https://facebook.com/warengonzagaofficialpage>
-* **Twitter:** <https://twitter.com/waren_gonzaga>
+* **Twitter:** <https://twitter.com/warengonzaga>
 * **Website:** <https://warengonzaga.com>
 * **Email:** dev(at)warengonzaga[.]com
 
 ---
 
-**</daisyjs.w>** with **<3** by **Waren Gonzaga**
+**</>** with **<3** by **Waren Gonzaga**
