@@ -167,7 +167,6 @@ Maintained and LTS version of [Particleground](https://github.com/jnicol/particl
 * Add Customization Features
 * Code Cleanup
 * Add continuous integration (travis)
-* Wiki Page
 * More Demo
 * More... (have suggestions? let me know!)
 
