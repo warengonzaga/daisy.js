@@ -1,8 +1,8 @@
 # DAISY.JS [![Developed by Waren Gonzaga](https://img.shields.io/badge/Developed%20by-Waren%20Gonzaga-blue.svg?longCache=true&style=for-the-badge)](https://facebook.com/warengonzagaofficialpage)
 
 [![GitHub Version](https://img.shields.io/github/release/WarenGonzaga/daisy.js.svg?style=for-the-badge)](https://github.com/WarenGonzaga/daisy.js/)
-[![Github Star](https://img.shields.io/github/stars/WarenGonzaga/daisy.js.svg?style=for-the-badge)](https://github.com/WarenGonzaga/Passview)
-[![Github Fork](https://img.shields.io/github/forks/WarenGonzaga/daisy.js.svg?style=for-the-badge)](https://github.com/WarenGonzaga/Passview)
+[![Github Star](https://img.shields.io/github/stars/WarenGonzaga/daisy.js.svg?style=for-the-badge)](https://github.com/WarenGonzaga/daisy.js)
+[![Github Fork](https://img.shields.io/github/forks/WarenGonzaga/daisy.js.svg?style=for-the-badge)](https://github.com/WarenGonzaga/daisy.js)
 [![License](https://img.shields.io/github/license/WarenGonzaga/daisy.js.svg?style=for-the-badge)](https://github.com/WarenGonzaga/daisy.js)
 [![Powered By](https://img.shields.io/badge/Powered%20By-GulpJS-orange.svg?style=for-the-badge)](https://gulpjs.com)
 
