@@ -1,4 +1,4 @@
-# DAISY.JS [![Developed by Waren Gonzaga](https://img.shields.io/badge/Developed%20by-Waren%20Gonzaga-blue.svg?longCache=true&style=for-the-badge)](https://facebook.com/warengonzagaofficialpage)
+# DAISY.JS [![Developed by Waren Gonzaga](https://img.shields.io/badge/Developed%20by-Waren%20Gonzaga-blue.svg?longCache=true&style=for-the-badge)](https://facebook.com/warengonzagaofficial)
 
 [![GitHub Version](https://img.shields.io/github/release/WarenGonzaga/daisy.js.svg?style=for-the-badge)](https://github.com/WarenGonzaga/daisy.js/)
 [![Github Star](https://img.shields.io/github/stars/WarenGonzaga/daisy.js.svg?style=for-the-badge)](https://github.com/WarenGonzaga/daisy.js)
@@ -205,7 +205,7 @@ Daisy.js is licensed under MIT - <https://opensource.org/licenses/MIT>
 
 Daisy.js is Developed and Maintained by **Waren Gonzaga**
 
-* **Facebook:** <https://facebook.com/warengonzagaofficialpage>
+* **Facebook:** <https://facebook.com/warengonzagaofficial>
 * **Twitter:** <https://twitter.com/warengonzaga>
 * **Website:** <https://warengonzaga.com>
 * **Email:** dev(at)warengonzaga[.]com
