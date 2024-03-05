@@ -33,7 +33,7 @@
     "gulp-options": "^1.1.1",
     "gulp-rename": "^2.0.0",
     "gulp-uglify": "^3.0.2",
-    "jshint": "^2.11.0",
+    "jshint": "^2.13.6",
     "jshint-stylish": "^2.2.1",
     "readable-stream": "^3.5.0"
   },
